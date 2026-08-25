@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #09000f;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   GENERAL SCREEN
+========================= */
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   MAIN QUESTION
+========================= */
+
+#questionScreen {
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255, 0, 170, 0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(110, 0, 255, 0.25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #100018,
+            #24002f,
+            #08000d
+        );
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    width: min(90%, 500px);
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: url(1787609041855.jpg);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(255, 0, 200, 0.1);
+
+    animation: appear 1s ease;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+
+    font-size: clamp(35px, 7vw, 55px);
+
+    margin-bottom: 15px;
+}
+
+
+.subtitle {
+
+    color: #d8c9dd;
+
+    margin-bottom: 35px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 60px;
+}
+
+
+button {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+#yesBtn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3cac,
+            #784ba0
+        );
+
+    color: white;
+
+    box-shadow:
+        0 0 25px rgba(255, 60, 172, 0.5);
+}
+
+
+#yesBtn:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px rgba(255, 60, 172, 0.9);
+}
+
+
+#noBtn {
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    position: relative;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+.background-video {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   FALLBACK IMAGE
+========================= */
+
+.background-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url();
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.55),
+            rgba(20, 0, 30, 0.65)
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   ACCOUNT CONTENT
+========================= */
+
+.account-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(90%, 550px);
+
+    text-align: center;
+
+    padding: 40px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    animation: accountAppear 1.2s ease;
+}
+
+
+.success-icon {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+.account-content h1 {
+
+    margin-bottom: 10px;
+}
+
+
+.account-content p {
+
+    color: #ddd;
+
+    margin-bottom: 20px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   ACCOUNT NUMBER
+========================= */
+
+.account-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+#accountNumber {
+
+    font-size: clamp(20px, 5vw, 30px);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+#copyBtn {
+
+    padding: 10px 18px;
+
+    background: white;
+
+    color: #26002f;
+
+    font-size: 14px;
+}
+
+
+#copyBtn:hover {
+
+    transform: scale(1.05);
+}
+
+
+#copyMessage {
+
+    margin-top: 15px;
+
+    min-height: 20px;
+
+    color: #ff9ce5;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes accountAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        padding: 40px 20px;
+    }
+
+
+    .buttons {
+
+        gap: 10px;
+    }
+
+
+    button {
+
+        padding: 13px 22px;
+    }
+
+
+    .account-content {
+
+        padding: 35px 18px;
+    }
+
+
+    .account-number {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
